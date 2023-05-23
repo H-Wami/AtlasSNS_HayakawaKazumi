@@ -58,6 +58,8 @@ class RegisterController extends Controller
             return redirect('added');
         }
         return view('auth.register');
+
+        $validated = $request->validated();
     }
 
     public function added()

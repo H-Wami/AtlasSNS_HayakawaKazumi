@@ -50,7 +50,7 @@ class RegisterFormRequest extends FormRequest
             'password.regex' => 'パスワードは英数字のみで入力して下さい。',
             'password.min' => 'パスワードは8文字以上で入力して下さい。',
             'password.max' => 'ユーザー名は20文字以下で入力して下さい。',
-            'password.comfirmed' => 'パスワードが一致していません。',
+            'password.comfirmed' => 'パスワードが一致していません。'
         ];
     }
 }
