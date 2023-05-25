@@ -41,8 +41,9 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    // ユーザー新規登録処理。=postの処理。
     public function register(RegisterFormRequest $request)
-    { //変更。
+    {
         if ($request->isMethod('post')) {
 
             $username = $request->input('username');
@@ -57,9 +58,12 @@ class RegisterController extends Controller
 
             return redirect('added');
         }
-        return view('auth.register');
+    }
 
-        $validated = $request->validated();
+    // 新規登録用viewページ表示。=getの処理
+    public function registerView(Request $request)
+    {
+        return view('auth.register');
     }
 
     public function added()

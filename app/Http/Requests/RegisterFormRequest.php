@@ -27,8 +27,8 @@ class RegisterFormRequest extends FormRequest
             //'項目名' => '検証ルール|検証ルール',
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|min:5|max:40|unique:users,mail|email',
-            'password' => 'required|regex:/^[a-zA-Z0-9]+$/|min:8|max:20|comfirmed:password',
-            'password_confimation' => 'required|regex:/^[a-zA-Z0-9]+$/|min:8|max:20'
+            'password' => 'required|regex:/^[a-zA-Z0-9]+$/|min:8|max:20|confirmed',
+            'password_confirmation' => 'required|regex:/^[a-zA-Z0-9]+$/|min:8|max:20'
         ];
     }
 
@@ -49,8 +49,13 @@ class RegisterFormRequest extends FormRequest
             'password.required' => 'パスワードは入力必須です。',
             'password.regex' => 'パスワードは英数字のみで入力して下さい。',
             'password.min' => 'パスワードは8文字以上で入力して下さい。',
-            'password.max' => 'ユーザー名は20文字以下で入力して下さい。',
-            'password.comfirmed' => 'パスワードが一致していません。'
+            'password.max' => 'パスワードは20文字以下で入力して下さい。',
+            'password.confirmed' => 'パスワードが一致していません。',
+
+            'password_confirmation.required' => 'パスワード確認は入力必須です。',
+            'password_confirmation.regex' => 'パスワード確認は英数字のみで入力して下さい。',
+            'password_confirmation.min' => 'パスワード確認は8文字以上で入力して下さい。',
+            'password_confirmation.max' => 'パスワード確認は20文字以下で入力して下さい。',
         ];
     }
 }

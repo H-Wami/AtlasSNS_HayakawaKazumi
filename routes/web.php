@@ -23,7 +23,9 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
-Route::get('/register', 'Auth\RegisterController@register');
+// 新規登録用viewページ表示
+Route::get('/register', 'Auth\RegisterController@registerView');
+// ユーザー新規登録処理
 Route::post('/register', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
