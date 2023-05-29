@@ -56,7 +56,10 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
-            return redirect('added');
+            // セッションを使用してユーザー名表示させる。
+            $data = $request->only('username');
+            $this->create($data);
+            return redirect('added')->with('username', $request);
         }
     }
 
@@ -65,7 +68,7 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
-
+    // 登録完了用viewページ表示。=getの処理。
     public function added()
     {
         return view('auth.added');

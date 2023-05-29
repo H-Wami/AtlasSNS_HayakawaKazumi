@@ -23,13 +23,14 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
-// 新規登録用viewページ表示
+// 新規登録用viewページ表示。
 Route::get('/register', 'Auth\RegisterController@registerView');
-// ユーザー新規登録処理
+// ユーザー新規登録処理。
 Route::post('/register', 'Auth\RegisterController@register');
 
+// 登録完了用viewページ表示。
 Route::get('/added', 'Auth\RegisterController@added');
-Route::post('/added', 'Auth\RegisterController@added');
+Route::post('/added', 'Auth\RegisterController@register');
 
 //ログイン中のページ
 Route::get('/top', 'PostsController@index');
