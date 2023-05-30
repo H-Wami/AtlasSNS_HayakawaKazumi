@@ -30,7 +30,7 @@ Route::post('/register', 'Auth\RegisterController@register');
 
 // 登録完了用viewページ表示。
 Route::get('/added', 'Auth\RegisterController@added');
-Route::post('/added', 'Auth\RegisterController@register');
+Route::post('/added', 'Auth\RegisterController@added');
 
 //ログイン中のページ
 Route::get('/top', 'PostsController@index');
