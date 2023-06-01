@@ -57,8 +57,8 @@ class RegisterController extends Controller
             ]);
 
             // セッションを使用してユーザー名表示させる。
-            $input = $request->session()->get("username");
-            return redirect('added')->with('username', $input);
+            $request->session()->put('username', $username);
+            return redirect('added');
         }
     }
 

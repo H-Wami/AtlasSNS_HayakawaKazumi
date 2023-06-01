@@ -24,18 +24,23 @@
 <body>
     <header>
         <div id="head">
-            <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                    <div>
+            <!-- Atlasリンク -->
+            <h1 class="head-title"><a href="/top"><img src="images/atlas.png"></a></h1>
+            <!--アコーディオンメニュー-->
+            <div id="accordion-menu">
+                <div id="accordion-item">
+                    <p class="login-user">さん</p>
+                    <div class="accordion-content">
                         <ul>
                             <li><a href="/top">ホーム</a></li>
                             <li><a href="/profile">プロフィール</a></li>
                             <li><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
+                    <img src="images/arrow.png">
                 </div>
+            </div>
+        </div>
     </header>
     <div id="row">
         <div id="container">
