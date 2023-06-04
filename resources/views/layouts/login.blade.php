@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
     <title></title>
+    <!-- Bootstrap入れる -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
     <!--スマホ,タブレット対応-->
@@ -25,16 +27,21 @@
     <header>
         <div id="head">
             <!-- Atlasリンク -->
-            <h1 class="head-title"><a href="/top"><img src="images/atlas.png"></a></h1>
-            <!--アコーディオンメニュー-->
-            <div id="accordion-menu">
-                <div id="accordion-item">
-                    <p class="login-user">さん</p>
-                    <div class="accordion-content">
-                        <ul>
-                            <li><a href="/top">ホーム</a></li>
-                            <li><a href="/profile">プロフィール</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
+            <h1 class="head_title"><a href="/top"><img src="images/atlas.png"></a></h1>
+            <div id="headContainer">
+                <div id="headContent">
+                    <!-- ログインユーザー名 -->
+                    <p class="login_user">{{ Auth::user()->username }}　さん</p>
+                    <!-- アコーディオンメニュー ボタン -->
+                    <button type="button" class="accordion_btn">
+                        <span class="line"></span>
+                    </button>
+                    <!-- アコーディオンメニューの中身 -->
+                    <div class="accordion_content">
+                        <ul class="accordion_items">
+                            <li class="accordion_text"><a href="/top">HOME</a></li>
+                            <li class="accordion_text"><a href="/profile">プロフィール編集</a></li>
+                            <li class="accordion_text"><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
                     <img src="images/arrow.png">
@@ -65,8 +72,8 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

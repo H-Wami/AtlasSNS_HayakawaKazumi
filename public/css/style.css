@@ -1,16 +1,103 @@
 @charset "utf-8";
 
-html {}
+html {
+    font-size: 16px;
+}
 
-body {}
+body {
+    font-size: 1rem;
+    color: #222222;
+}
 
 /* header */
-header {
+#head {
+    position: relative;
     background: #186AC9;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+h1.head_title img {
+    box-sizing: border-box;
+    width: 135px;
+    padding: 20px 20px;
+}
+
+#headContainer {
+    margin: 0 0 0 auto;
+}
+
+#headContent {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+p.login_user {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 100px;
 }
 
 /* アコーディオンメニュー */
+button.accordion_btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    /* border: none; */
+    background: none;
+    outline: none;
+}
 
+.line {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 4px;
+    left: 8px
+}
+
+.line.open {
+    transform: rotate(-45deg);
+    top: 12px;
+}
+
+.accordion_content {
+    display: none;
+}
+
+.accordion_content.open {
+    display: block;
+    position: absolute;
+    top: 58px;
+    right: 20px;
+}
+
+.accordion_items {
+    background-color: #ffffff;
+    border: 2px solid #042c7c;
+    text-align: center;
+}
+
+.accordion_text a {
+    display: block;
+    font-size: 20px;
+    color: #848484;
+    padding: 25px 45px;
+}
+
+.accordion_text a:hover {
+    color: #ffffff;
+    background-color: #042c7c;
+}
 
 /* main content */
 #row {
