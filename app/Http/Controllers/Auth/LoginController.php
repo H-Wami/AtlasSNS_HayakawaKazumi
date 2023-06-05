@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class LoginController extends Controller
 {
@@ -51,5 +52,11 @@ class LoginController extends Controller
             }
         }
         return view("auth.login");
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

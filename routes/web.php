@@ -20,7 +20,9 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+// Loginページ表示。
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+// ログイン処理。
 Route::post('/login', 'Auth\LoginController@login');
 
 // 新規登録用viewページ表示。
@@ -41,3 +43,6 @@ Route::get('/search', 'UsersController@index');
 
 Route::get('/follow-list', 'PostsController@index');
 Route::get('/follower-list', 'PostsController@index');
+
+//ログアウト機能
+Route::get('/logout', 'Auth\LoginController@logout');

@@ -1,10 +1,12 @@
 @charset "utf-8";
 
 html {
+    height: 100%;
     font-size: 16px;
 }
 
 body {
+    height: 100%;
     font-size: 1rem;
     color: #222222;
 }
@@ -37,7 +39,7 @@ h1.head_title img {
 }
 
 p.login_user {
-    color: #ffffff;
+    color: #fff;
     font-size: 18px;
     font-weight: 500;
     padding-right: 100px;
@@ -57,8 +59,8 @@ button.accordion_btn {
     display: block;
     width: 16px;
     height: 16px;
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
     transform: rotate(135deg);
     position: absolute;
     top: 4px;
@@ -82,20 +84,20 @@ button.accordion_btn {
 }
 
 .accordion_items {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 2px solid #042c7c;
     text-align: center;
 }
 
 .accordion_text a {
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     color: #848484;
-    padding: 25px 45px;
+    padding: 25px 50px;
 }
 
 .accordion_text a:hover {
-    color: #ffffff;
+    color: #fff;
     background-color: #042c7c;
 }
 

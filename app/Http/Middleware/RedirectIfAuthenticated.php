@@ -20,7 +20,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             //ログアウト実装したらコメントアウト解除
-            //return redirect(RouteServiceProvider::HOME);
+            return redirect(RouteServiceProvider::HOME);
         }
 
         return $next($request);
