@@ -8,7 +8,7 @@
     <meta name="description" content="ページの内容を表す文章" />
     <title>AtlasSNS</title>
     <!-- Bootstrap入れる -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
     <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
     <!--スマホ,タブレット対応-->
@@ -53,21 +53,21 @@
         <div id="container">
             @yield('content')
         </div>
-        <div id="side-bar">
+        <div id="sideBar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                     <p>フォロー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <button type="button" class="btn btn-primary btn-sm"><a href="/follow-list" class="btn-text">フォローリスト</a></button>
                 <div>
                     <p>フォロワー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <button type="button" class="btn btn-primary btn-sm"><a href="/follower-list" class="btn-text">フォロワーリスト</a></button>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <button type="button" class="btn btn-primary"><a href="/search" class="btn-text">ユーザー検索</a></button>
         </div>
     </div>
     <footer>

@@ -11,7 +11,7 @@ body {
     color: #222222;
 }
 
-/* header */
+/* ヘッダー */
 #head {
     position: relative;
     background: #186AC9;
@@ -50,7 +50,7 @@ button.accordion_btn {
     width: 40px;
     height: 40px;
     position: relative;
-    /* border: none; */
+    border: none;
     background: none;
     outline: none;
 }
@@ -111,7 +111,18 @@ button.accordion_btn {
     flex: 0 0 80%;
 }
 
-#side-bar {
+/* サイドバー */
+#sideBar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+/* ボタン色調節 */
+.btn-primary {
+    background: #125acc;
+    color: #fff;
+}
+
+a.btn-text:visited:not(.btn) {
+    color: #fff;
 }

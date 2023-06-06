@@ -47,11 +47,11 @@ class LoginController extends Controller
             $data = $request->only('mail', 'password');
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと
-            if (Auth::attempt($data)) {
-                return redirect('/top');
+            if (Auth::attempt($data)) { // Auth::attemptで一致しているか確認。
+                return redirect('/top'); // 一致していたらtopページへログイン。
             }
         }
-        return view("auth.login");
+        return view("auth.login"); // 一致していなかったらloginページ再読み込み。
     }
 
     public function logout(Request $request)
