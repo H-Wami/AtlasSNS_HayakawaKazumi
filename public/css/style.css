@@ -195,8 +195,6 @@ textarea {
 /* 削除ボタン */
 .delete_btn {
     position: relative;
-    width: 100%;
-    top: 80px;
 }
 
 .delete_btn img {
