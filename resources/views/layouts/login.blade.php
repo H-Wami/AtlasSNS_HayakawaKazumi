@@ -44,7 +44,8 @@
                             <li class="accordion_text"><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
-                    <img src="images/arrow.png">
+                    <!-- アイコン画像仮置き -->
+                    <img src="images/icon1.png">
                 </div>
             </div>
         </div>

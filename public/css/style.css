@@ -8,7 +8,7 @@ html {
 body {
     height: 100%;
     font-size: 1rem;
-    color: #222222;
+    color: #222;
 }
 
 /* ヘッダー */
@@ -74,6 +74,7 @@ button.accordion_btn {
 
 .accordion_content {
     display: none;
+    z-index: 20;
 }
 
 .accordion_content.open {
@@ -85,7 +86,7 @@ button.accordion_btn {
 
 .accordion_items {
     background-color: #fff;
-    border: 2px solid #042c7c;
+    border: 2px solid #042C7C;
     text-align: center;
 }
 
@@ -98,7 +99,7 @@ button.accordion_btn {
 
 .accordion_text a:hover {
     color: #fff;
-    background-color: #042c7c;
+    background-color: #042C7C;
 }
 
 /* main content */
@@ -111,18 +112,148 @@ button.accordion_btn {
     flex: 0 0 80%;
 }
 
+/* 投稿フォーム */
+.post_form {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: solid 7px #E0E0E0;
+    z-index: 10;
+}
+
+.icon {
+    display: block;
+    margin: 30px 0 0 50px;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+form {
+    display: flex;
+}
+
+textarea {
+    border: none;
+    resize: none;
+    width: 600px;
+    height: 60px;
+    margin: 40px 0 0 10px;
+}
+
+.post_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 70px 0 0 70px;
+    border: none;
+}
+
+/* 投稿一覧 */
+/* 配置 */
+.post_contents ul {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #222;
+}
+
+.post_content1 {
+    display: flex;
+    width: 15%;
+    padding: 15px 0px 15px 100px;
+    background-color: #125ACC;
+}
+
+.post_content2 {
+    width: 85%;
+    padding: 20px 20px 15px 15px;
+    background-color: aqua;
+}
+
+.post_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_post {
+    padding-top: 10px;
+}
+
+/* 投稿者アイコン */
+.post_icon img {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* 削除ボタン */
+.delete_btn {
+    position: relative;
+    width: 100%;
+    top: 80px;
+}
+
+.delete_btn img {
+    position: absolute;
+    right: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.delete_btn:hover img:nth-of-type(2) {
+    opacity: 0;
+}
+
+
 /* サイドバー */
 #sideBar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+    height: 100vh;
 }
 
 /* ボタン色調節 */
 .btn-primary {
-    background: #125acc;
+    background: #125ACC;
     color: #fff;
 }
 
 a.btn-text:visited:not(.btn) {
     color: #fff;
+}
+
+/* 検索フォーム */
+.search_form {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    padding-bottom: 45px;
+    border-bottom: solid 7px #E0E0E0;
+    z-index: 10;
+}
+
+input {
+    width: 270px;
+    height: 40px;
+    border: solid 2px #A0A0A0;
+    border-radius: 5px;
+    margin: 45px 0 0 50px;
+}
+
+.search_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 45px 0 0 20px;
 }
