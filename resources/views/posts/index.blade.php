@@ -37,22 +37,36 @@
       <div class="post_contents">
         @foreach ($posts as $post)
         <ul>
-          <!-- アイコン画像仮置き -->
-          <div class="post_content1">
-            <li class="post_icon"><img src="images/icon1.png" alt="投稿者アイコン"></li>
-          </div>
-          <div class="post_content2">
-            <div class="post_info">
-              <li class="post_name">{{ $post->user->username }}</li>
-              <li class="post_time">{{ $post->created_at }}</li>
+          <!-- 左端のまとまり -->
+          <li class="post_content1">
+            <!-- アイコン画像仮置き -->
+            <div class="post_icon"><img src="images/icon1.png" alt="投稿者アイコン"></div>
+          </li>
+          <!-- 中心のまとまり -->
+          <li class="post_content2">
+            <!-- 投稿者名前 -->
+            <div class="post_name">{{ $post->user->username }}</div>
+            <!-- つぶやき内容 -->
+            <div class="new_post">{{ $post->post }}</div>
+          </li>
+          <!-- 右端のまとまり -->
+          <li class="post_content3">
+            <!-- 投稿時間 -->
+            <div class="post_time">{{ $post->created_at }}</div>
+            <!-- ボタンのまとまり -->
+            <div class="post_content4">
+              <!-- 編集ボタン -->
+              <div class="update_btn"><a href="">
+                  <img src="images/edit.png" alt="編集ボタン">
+                </a>
+              </div>
+              <!-- 削除ボタン -->
+              <div class="delete_btn"><a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
+                  <img src="images/trash.png" alt="削除ボタン削除後">
+                  <img src="images/trash-h.png" alt="削除ボタン削除前">
+                </a>
+              </div>
             </div>
-            <li class="new_post">{{ $post->post }}</li>
-          </div>
-          <!-- 削除ボタン -->
-          <li class="delete_btn"><a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')">
-              <img src="images/trash.png" alt="削除ボタン削除後">
-              <img src="images/trash-h.png" alt="削除ボタン削除前">
-            </a>
           </li>
         </ul>
         @endforeach

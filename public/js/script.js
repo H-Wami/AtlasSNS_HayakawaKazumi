@@ -1,3 +1,4 @@
+// アコーディオンメニューの動き
 $(function () {
   $('button.accordion_btn').click(function () { //ボタンを押したら
     $('.line').toggleClass('open'); //矢印の向きが変わる

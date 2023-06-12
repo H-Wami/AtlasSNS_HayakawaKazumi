@@ -154,7 +154,6 @@ textarea {
 }
 
 /* 投稿一覧 */
-/* 配置 */
 .post_contents ul {
     width: 100%;
     margin: 0 auto;
@@ -163,26 +162,11 @@ textarea {
     border-bottom: 1px solid #222;
 }
 
+/* 左端のまとまり */
 .post_content1 {
-    display: flex;
     width: 15%;
     padding: 15px 0px 15px 100px;
     background-color: #125ACC;
-}
-
-.post_content2 {
-    width: 85%;
-    padding: 20px 20px 15px 15px;
-    background-color: aqua;
-}
-
-.post_info {
-    display: flex;
-    justify-content: space-between;
-}
-
-.new_post {
-    padding-top: 10px;
 }
 
 /* 投稿者アイコン */
@@ -191,21 +175,55 @@ textarea {
     height: 50px;
 }
 
-
-/* 削除ボタン */
-.delete_btn {
-    position: relative;
+/* 中心のまとまり */
+.post_content2 {
+    width: 65%;
+    padding: 20px 20px 15px 15px;
+    background-color: aqua;
 }
 
+/* つぶやき内容 */
+.new_post {
+    padding-top: 10px;
+}
+
+/* 右端のまとまり */
+.post_content3 {
+    width: 20%;
+    padding: 15px 0 15px 0;
+    background-color: #125ACC;
+    text-align: left;
+}
+
+/* ボタンのまとまり */
+.post_content4 {
+    display: flex;
+    position: relative;
+    width: 45%;
+    background-color: aquamarine;
+    margin: 40px 0 0 80px;
+}
+
+/* 編集ボタン */
+.update_btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+/* 削除ボタン */
 .delete_btn img {
     position: absolute;
-    right: 0;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: block;
     width: 40px;
     height: 40px;
     border-radius: 5px;
+    top: 20px;
+    bottom: 0;
+    left: 71px;
+    right: 0;
 }
 
 .delete_btn:hover img:nth-of-type(2) {
@@ -217,7 +235,7 @@ textarea {
 #sideBar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-    height: 100vh;
+    min-height: 100%;
 }
 
 /* ボタン色調節 */
