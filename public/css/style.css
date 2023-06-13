@@ -163,7 +163,7 @@ textarea {
 }
 
 /* 左端のまとまり */
-.post_content1 {
+.left_post_content {
     width: 15%;
     padding: 15px 0px 15px 100px;
     background-color: #125ACC;
@@ -176,7 +176,7 @@ textarea {
 }
 
 /* 中心のまとまり */
-.post_content2 {
+.center_post_content {
     width: 65%;
     padding: 20px 20px 15px 15px;
     background-color: aqua;
@@ -188,7 +188,7 @@ textarea {
 }
 
 /* 右端のまとまり */
-.post_content3 {
+.right_post_content {
     width: 20%;
     padding: 15px 0 15px 0;
     background-color: #125ACC;
@@ -196,7 +196,7 @@ textarea {
 }
 
 /* ボタンのまとまり */
-.post_content4 {
+.btn_post_content {
     display: flex;
     position: relative;
     width: 45%;

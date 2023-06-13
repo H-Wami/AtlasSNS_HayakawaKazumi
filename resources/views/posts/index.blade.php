@@ -38,23 +38,24 @@
         @foreach ($posts as $post)
         <ul>
           <!-- 左端のまとまり -->
-          <li class="post_content1">
+          <li class="left_post_content">
             <!-- アイコン画像仮置き -->
             <div class="post_icon"><img src="images/icon1.png" alt="投稿者アイコン"></div>
           </li>
           <!-- 中心のまとまり -->
-          <li class="post_content2">
+          <li class="center_post_content">
             <!-- 投稿者名前 -->
             <div class="post_name">{{ $post->user->username }}</div>
             <!-- つぶやき内容 -->
             <div class="new_post">{{ $post->post }}</div>
           </li>
           <!-- 右端のまとまり -->
-          <li class="post_content3">
+          <li class="right_post_content">
             <!-- 投稿時間 -->
             <div class="post_time">{{ $post->created_at }}</div>
+            @if($post->user->username === Auth::user()->username)
             <!-- ボタンのまとまり -->
-            <div class="post_content4">
+            <div class="btn_post_content">
               <!-- 編集ボタン -->
               <div class="update_btn"><a href="">
                   <img src="images/edit.png" alt="編集ボタン">
@@ -67,6 +68,7 @@
                 </a>
               </div>
             </div>
+            @endif
           </li>
         </ul>
         @endforeach

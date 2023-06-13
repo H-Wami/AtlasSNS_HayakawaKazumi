@@ -8,7 +8,7 @@ use Auth;
 
 class PostsController extends Controller
 {
-    //読み込み機能。
+    //読み込み機能
     public function index()
     {
         $posts = Post::get(); //Postモデル（postsテーブル）からレコード情報を取得
