@@ -31,13 +31,22 @@ class PostsController extends Controller
         );
 
         $post = $request->input('newPost'); //入力されたものを$postにする
-        Post::create(['post' => $post, 'user_id' => Auth::id()]); //$idとユーザーIDを作成し保存。 カラム名 => 値
+        Post::create(['post' => $post, 'user_id' => Auth::id()]); //$postとユーザーIDを作成し保存。 カラム名 => 値
         return back();
     }
+
     // 投稿削除機能
     public function deletePost($id)
     {
         Post::where('id', $id)->delete(); //Postに入っているidを消す
         return redirect('/top');
     }
+
+    // // 投稿更新機能
+    // public function updatePost(Request $request)
+    // {
+    //     $post = $request->input('updatePost');
+    //     // Post::where('post' => $post, 'id' => $post)->first();
+    //     return view('posts.updatePost', ['post' => $post]);
+    // }
 }

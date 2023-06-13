@@ -53,11 +53,12 @@
           <li class="right_post_content">
             <!-- 投稿時間 -->
             <div class="post_time">{{ $post->created_at }}</div>
+            <!-- もし投稿者がログインユーザーならばボタンを表示する -->
             @if($post->user->username === Auth::user()->username)
             <!-- ボタンのまとまり -->
             <div class="btn_post_content">
               <!-- 編集ボタン -->
-              <div class="update_btn"><a href="">
+              <div class="update_btn"><a class="js_modal_open" post="{{ $post->post }}" post_id="{{ $post->id }}">
                   <img src="images/edit.png" alt="編集ボタン">
                 </a>
               </div>
@@ -72,6 +73,19 @@
           </li>
         </ul>
         @endforeach
+        <!-- 編集モーダルの中身 -->
+        <div class="modal js_modal">
+          <div class="modal__bg js_modal_close"></div>
+          <div class="modal__content">
+            <form action="/post/update" method="post">
+              <textarea name="renewPost" class="modal_post"></textarea>
+              <input type="hidden" name="renewPost" class="modal_id" value="post_id">
+              <input type="submit" value="更新">
+              {{ csrf_field() }}
+            </form>
+            <a class="js_modal_close" href="">閉じる</a>
+          </div>
+        </div>
       </div>
     </li>
   </ul>

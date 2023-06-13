@@ -18,12 +18,10 @@
 
 //Auth::routes();
 
+// use App\Http\Controllers\PostsController;
 
 //ログアウト中のページ
 // Loginページ表示。
-
-use App\Http\Controllers\PostsController;
-
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 // ログイン処理。
 Route::post('/login', 'Auth\LoginController@login');
@@ -55,3 +53,6 @@ Route::post('/post/create', 'PostsController@createPost');
 
 //投稿削除機能
 Route::get('/post/{id}/delete', 'PostsController@deletePost');
+
+//  投稿更新機能
+// Route::post('/post/update', 'PostsController@updatePost');
