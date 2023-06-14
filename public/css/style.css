@@ -123,21 +123,21 @@ button.accordion_btn {
     z-index: 10;
 }
 
-.icon {
+.post_user_icon {
     display: block;
     margin: 30px 0 0 50px;
 }
 
-.icon img {
+.post_user_icon img {
     width: 50px;
     height: 50px;
 }
 
-form {
+.post_form_contents {
     display: flex;
 }
 
-textarea {
+.new_post_content {
     border: none;
     resize: none;
     width: 600px;
@@ -208,7 +208,6 @@ textarea {
 .update_btn img {
     width: 40px;
     height: 40px;
-    border-radius: 5px;
 }
 
 /* 編集モーダルの中身 */
@@ -235,7 +234,31 @@ textarea {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+    height: 50%;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
 }
+
+.modal_form {
+    width: 100%;
+    height: 100%;
+}
+
+.modal_post {
+    resize: none;
+    width: 100%;
+    height: 75%;
+}
+
+.update_proceed_btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    margin: 10px 0 10px 0;
+}
+
+
 
 /* 削除ボタン */
 .delete_btn img {
@@ -275,7 +298,7 @@ a.btn-text:visited:not(.btn) {
 }
 
 /* 検索フォーム */
-.search_form {
+.search_contents {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
@@ -285,7 +308,7 @@ a.btn-text:visited:not(.btn) {
     z-index: 10;
 }
 
-input {
+.search_form {
     width: 270px;
     height: 40px;
     border: solid 2px #A0A0A0;

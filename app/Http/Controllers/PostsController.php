@@ -42,11 +42,26 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    // // 投稿更新機能
-    // public function updatePost(Request $request)
-    // {
-    //     $post = $request->input('updatePost');
-    //     // Post::where('post' => $post, 'id' => $post)->first();
-    //     return view('posts.updatePost', ['post' => $post]);
-    // }
+    // 投稿更新機能
+    public function updatePost(Request $request)
+    {
+        //バリデーション定義・メッセージ
+        $request->validate(
+            [
+                'renewPost' => 'min:1|required|max:150'
+            ],
+            [
+                "min" => "1文字以上で入力して下さい。",
+                "required" => "入力必須です。",
+                "max" => "150文字以下で入力して下さい。"
+            ]
+        );
+
+        $post = $request->input('renewPost'); //入力されたrenewPostを$postにする
+        $id = $request->input('postId'); //入力されたpostIdを$idにする
+        Post::where('id', $id)->update([ //(カラム名,どれと一致するか postsテーブルid番号,$post)を探す
+            'post' => $post //postカラムを$postに編集し保存。
+        ]);
+        return redirect('/top');
+    }
 }

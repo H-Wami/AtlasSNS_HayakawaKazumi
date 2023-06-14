@@ -16,15 +16,16 @@
 <!-- 投稿フォーム -->
 <div class="post_form">
   <!-- アイコン画像仮置き -->
-  <div class="icon">
+  <div class="post_user_icon">
     <img src="images/icon1.png">
   </div>
   <!-- 入力フォーム -->
-  <!-- <form action="/create" method="post"> -->
   {!! Form::open(['url' => 'post/create']) !!}
-  <textarea name="newPost" placeholder="投稿内容を入力してください。"></textarea>
-  <!-- 投稿ボタン -->
-  <input type="image" src="images/post.png" class="post_btn" alt="投稿ボタン">
+  <div class="post_form_contents">
+    <textarea class="new_post_content" name="newPost" placeholder="投稿内容を入力してください。"></textarea>
+    <!-- 投稿ボタン -->
+    <input type="image" src="images/post.png" class="post_btn" alt="投稿ボタン">
+  </div>
   {!! Form::close() !!}
   <!-- </form> -->
 </div>
@@ -77,13 +78,12 @@
         <div class="modal js_modal">
           <div class="modal__bg js_modal_close"></div>
           <div class="modal__content">
-            <form action="/post/update" method="post">
+            <form action="/post/update" method="post" class="modal_form">
               <textarea name="renewPost" class="modal_post"></textarea>
-              <input type="hidden" name="renewPost" class="modal_id" value="post_id">
-              <input type="submit" value="更新">
+              <input type="hidden" name="postId" class="modal_id" value="">
+              <input type="image" src="images/edit.png" class="update_proceed_btn" alt="編集実行ボタン">
               {{ csrf_field() }}
             </form>
-            <a class="js_modal_close" href="">閉じる</a>
           </div>
         </div>
       </div>

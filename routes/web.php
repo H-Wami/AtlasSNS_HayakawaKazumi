@@ -55,4 +55,4 @@ Route::post('/post/create', 'PostsController@createPost');
 Route::get('/post/{id}/delete', 'PostsController@deletePost');
 
 //  投稿更新機能
-// Route::post('/post/update', 'PostsController@updatePost');
+Route::post('/post/update', 'PostsController@updatePost');
