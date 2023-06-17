@@ -36,14 +36,21 @@ h1.head_title img {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    padding: 0 20px 0 20px;
 }
 
 p.login_user {
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    padding-right: 100px;
+    padding-right: 30px;
 }
+
+.head_user_icon img {
+    width: 50px;
+    height: 50px;
+}
+
 
 /* アコーディオンメニュー */
 button.accordion_btn {
@@ -80,8 +87,8 @@ button.accordion_btn {
 .accordion_content.open {
     display: block;
     position: absolute;
-    top: 58px;
-    right: 20px;
+    top: 63px;
+    right: 0;
 }
 
 .accordion_items {
@@ -94,7 +101,7 @@ button.accordion_btn {
     display: block;
     font-size: 18px;
     color: #848484;
-    padding: 25px 50px;
+    padding: 25px 55px;
 }
 
 .accordion_text a:hover {
@@ -208,6 +215,7 @@ button.accordion_btn {
 .update_btn img {
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 /* 編集モーダルの中身 */
@@ -258,8 +266,6 @@ button.accordion_btn {
     margin: 10px 0 10px 0;
 }
 
-
-
 /* 削除ボタン */
 .delete_btn img {
     position: absolute;
@@ -298,27 +304,46 @@ a.btn-text:visited:not(.btn) {
 }
 
 /* 検索フォーム */
-.search_contents {
+.search_content {
+    position: relative;
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    position: relative;
-    padding-bottom: 45px;
+    flex-wrap: nowrap;
+    align-items: center;
     border-bottom: solid 7px #E0E0E0;
     z-index: 10;
 }
 
 .search_form {
-    width: 270px;
+    width: 50%;
+    display: flex;
+    margin: 45px auto 45px 50px;
+}
+
+.search_text {
+    width: 50%;
     height: 40px;
     border: solid 2px #A0A0A0;
     border-radius: 5px;
-    margin: 45px 0 0 50px;
+    margin-right: 15px;
+
 }
 
 .search_btn {
     width: 40px;
     height: 40px;
     border-radius: 5px;
-    margin: 45px 0 0 20px;
+}
+
+/* 検索ワード */
+p.keyword {
+    width: 40%;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+/* ユーザー一覧 */
+.user_contents ul {
+    display: flex;
 }

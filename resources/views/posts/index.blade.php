@@ -79,8 +79,10 @@
           <div class="modal__bg js_modal_close"></div>
           <div class="modal__content">
             <form action="/post/update" method="post" class="modal_form">
+              <!-- 書き換えできるフォーム -->
               <textarea name="renewPost" class="modal_post"></textarea>
               <input type="hidden" name="postId" class="modal_id" value="">
+              <!-- 編集実行ボタン -->
               <input type="image" src="images/edit.png" class="update_proceed_btn" alt="編集実行ボタン">
               {{ csrf_field() }}
             </form>

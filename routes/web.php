@@ -21,17 +21,17 @@
 // use App\Http\Controllers\PostsController;
 
 //ログアウト中のページ
-// Loginページ表示。
+// Loginページ表示
 Route::get('/login', 'Auth\LoginController@login')->name('login');
-// ログイン処理。
+// ログイン処理
 Route::post('/login', 'Auth\LoginController@login');
 
-// 新規登録用viewページ表示。
+// 新規登録用viewページ表示
 Route::get('/register', 'Auth\RegisterController@registerView');
-// ユーザー新規登録処理。
+// ユーザー新規登録処理
 Route::post('/register', 'Auth\RegisterController@register');
 
-// 登録完了用viewページ表示。
+// 登録完了用viewページ表示
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
@@ -40,6 +40,7 @@ Route::get('/top', 'PostsController@index');
 
 Route::get('/profile', 'UsersController@profile');
 
+// 検索ページ表示
 Route::get('/search', 'UsersController@search');
 
 Route::get('/follow-list', 'FollowsController@followList');
@@ -54,5 +55,8 @@ Route::post('/post/create', 'PostsController@createPost');
 //投稿削除機能
 Route::get('/post/{id}/delete', 'PostsController@deletePost');
 
-//  投稿更新機能
+// 投稿更新機能
 Route::post('/post/update', 'PostsController@updatePost');
+
+// ユーザー検索機能
+Route::post('/search', 'UsersController@searchUser');

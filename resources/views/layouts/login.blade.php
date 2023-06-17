@@ -45,7 +45,9 @@
                         </ul>
                     </div>
                     <!-- アイコン画像仮置き -->
-                    <img src="images/icon1.png">
+                    <div class="head_user_icon">
+                        <img src="images/icon1.png" alt="ヘッダーアイコン">
+                    </div>
                 </div>
             </div>
         </div>
