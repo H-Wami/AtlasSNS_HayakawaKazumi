@@ -13,7 +13,8 @@ class UsersController extends Controller
     {
         $id = Auth::id(); //Auth認証している=ログイン中のユーザー
         $users = User::where('id', '!=', $id)->get(); //Auth認証されたユーザー以外を表示する
-        return view('users.search', ['users' => $users]);
+        $follows = Auth::User()->follows()->get(); //ログインユーザーがフォローしている人を表示する
+        return view('users.search', ['users' => $users, 'follows' => $follows]);
     }
 
     //ユーザー検索機能

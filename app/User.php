@@ -50,12 +50,12 @@ class User extends Authenticatable
     // フォローしているかの判定
     public function isFollowing(Int $user_id) //Int=正数型の変数
     {
-        return (bool) $this->follows()->where("followed_id", $user_id)->first(['id']); // boolean=値があるか判定。 followed_idにuser_idがあればfollowsテーブルのIDを取得する(first)
+        return (bool) $this->follows()->where("followed_id", $user_id)->first(['follows.id']); // boolean=値があるか判定。 followed_idにuser_idがあればfollowsテーブルのID(テーブル名.id)を取得する(first)
     }
 
     // フォローされているかの判定
     public function isFollowed(Int $user_id) //Int=正数型の変数
     {
-        return (bool) $this->follows()->where("following_id", $user_id)->first(['id']); // boolean=値があるか判定。 following_idにuser_idがあればfollowsテーブルのIDを取得する(first)
+        return (bool) $this->follows()->where("following_id", $user_id)->first(['follows.id']); // boolean=値があるか判定。 following_idにuser_idがあればfollowsテーブルのID(テーブル名.id)を取得する(first)
     }
 }

@@ -31,13 +31,12 @@
           <!-- 登録者名 -->
           <li class="center_user_content">{{ $user->username }}</li>
           <!-- フォロー、フォロー解除ボタン -->
-          @if (auth()->user()->isFollowing($user->id))
+          @if (auth()->user()->isFollowing($user->id))<!-- もしログインユーザーがフォローしていたらフォロー解除ボタンを表示する-->
           <li class="unfollow_btn">
-
             <button type="button" class="btn btn-danger">
               <a href="/search" class="btn-text">フォロー解除</button></a>
           </li>
-          @else
+          @else <!-- フォローしていなかったらフォローボタンを表示する-->
           <li class="follow_btn"><button type="button" class="btn btn-info">
               <a href="/search" class="btn-text">フォローする</button></a>
           </li>

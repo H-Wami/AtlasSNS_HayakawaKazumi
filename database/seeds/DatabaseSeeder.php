@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         // 初期ユーザー
         $this->call(UsersTableSeeder::class);
+        // 初期値(フォロー)
+        $this->call(FollowsTableSeeder::class);
     }
 }
