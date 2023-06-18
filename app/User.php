@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password',
+        'username', 'mail', 'password', 'following_id', 'follows.id'
     ];
 
     /**
@@ -57,5 +57,17 @@ class User extends Authenticatable
     public function isFollowed(Int $user_id) //Int=正数型の変数
     {
         return (bool) $this->follows()->where("following_id", $user_id)->first(['follows.id']); // boolean=値があるか判定。 following_idにuser_idがあればfollowsテーブルのID(テーブル名.id)を取得する(first)
+    }
+
+    //フォロー解除
+    public function unfollow(Int $user_id) //Int=正数型の変数
+    {
+        return $this->follows()->detach($user_id); //フォローしているユーザーをdetach=中間テーブルへのデータ削除(delete)
+    }
+
+    //フォロー
+    public function follow(Int $user_id) //Int=正数型の変数
+    {
+        return $this->follows()->attach($user_id); //フォローしているユーザーをattach=中間テーブルへのデータ登録(create)
     }
 }

@@ -34,11 +34,14 @@
           @if (auth()->user()->isFollowing($user->id))<!-- もしログインユーザーがフォローしていたらフォロー解除ボタンを表示する-->
           <li class="unfollow_btn">
             <button type="button" class="btn btn-danger">
-              <a href="/search" class="btn-text">フォロー解除</button></a>
+              <a href="/user/{{$user->id}}/unfollow" class="btn-text">フォロー解除</a></button>
           </li>
           @else <!-- フォローしていなかったらフォローボタンを表示する-->
-          <li class="follow_btn"><button type="button" class="btn btn-info">
-              <a href="/search" class="btn-text">フォローする</button></a>
+          <li class="follow_btn">
+            <form action="/user/{{$user->id}}/follow" method="post">
+              @csrf
+            <button type="button" class="btn btn-info">フォローする</button>
+            </form>
           </li>
           @endif
         </ul>

@@ -173,7 +173,6 @@ button.accordion_btn {
 .left_post_content {
     width: 15%;
     padding: 15px 0px 15px 100px;
-    background-color: #125ACC;
 }
 
 /* 投稿者アイコン */
@@ -186,7 +185,6 @@ button.accordion_btn {
 .center_post_content {
     width: 65%;
     padding: 20px 20px 15px 15px;
-    background-color: aqua;
 }
 
 /* つぶやき内容 */
@@ -198,7 +196,6 @@ button.accordion_btn {
 .right_post_content {
     width: 20%;
     padding: 15px 0 15px 0;
-    background-color: #125ACC;
     text-align: left;
 }
 
@@ -207,7 +204,6 @@ button.accordion_btn {
     display: flex;
     position: relative;
     width: 45%;
-    background-color: aquamarine;
     margin: 40px 0 0 80px;
 }
 
@@ -290,7 +286,7 @@ button.accordion_btn {
 #sideBar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 /* ボタン色調節 */
@@ -346,4 +342,13 @@ p.keyword {
 /* ユーザー一覧 */
 .user_contents ul {
     display: flex;
+}
+
+/* ボタン色調節 */
+.btn-info {
+    color: #fff;
+}
+
+.btn-info:visited:not(.btn) {
+    color: #fff;
 }

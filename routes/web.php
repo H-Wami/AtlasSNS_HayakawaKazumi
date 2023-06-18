@@ -60,3 +60,9 @@ Route::post('/post/update', 'PostsController@updatePost');
 
 // ユーザー検索機能
 Route::post('/search', 'UsersController@searchUser');
+
+// フォロー解除機能
+Route::get('/user/{id}/unfollow', 'FollowsController@unfollow');
+
+// フォロー機能
+Route::post('/user/{id}/follow', 'FollowsController@follow');
