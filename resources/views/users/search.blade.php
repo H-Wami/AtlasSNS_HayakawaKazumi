@@ -24,12 +24,12 @@
       <div class="user_contents">
         @foreach ($users as $user)
         <ul>
-          <!-- 登録者アイコン -->
-          <li class="register_icon">
-            <img src="images/{{ $user->images }}" alt="登録者アイコン">
+          <li class="left_register_contents">
+            <!-- 登録者アイコン -->
+            <div class="register_icon"> <img src="images/{{ $user->images }}" alt="登録者アイコン"></div>
+            <!-- 登録者名 -->
+            <div class="register_user">{{ $user->username }}</div>
           </li>
-          <!-- 登録者名 -->
-          <li class="center_user_content">{{ $user->username }}</li>
           <!-- フォロー、フォロー解除ボタン -->
           @if (auth()->user()->isFollowing($user->id))<!-- もしログインユーザーがフォローしていたらフォロー解除ボタンを表示する-->
           <li class="unfollow_btn">
@@ -40,7 +40,7 @@
           <li class="follow_btn">
             <form action="/user/{{$user->id}}/follow" method="post">
               @csrf
-            <button type="button" class="btn btn-info">フォローする</button>
+              <button type="submit" class="btn btn-info">フォローする</button>
             </form>
           </li>
           @endif

@@ -340,8 +340,29 @@ p.keyword {
 }
 
 /* ユーザー一覧 */
+.user_display {
+    width: 100%;
+    position: relative;
+}
+
 .user_contents ul {
+    width: 50%;
     display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.left_register_contents{
+    display: flex;
+    align-items: center;
+}
+
+.register_user {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
 }
 
 /* ボタン色調節 */
@@ -349,6 +370,19 @@ p.keyword {
     color: #fff;
 }
 
+.register_icon img {
+    width: 50px;
+    height: 50px;
+}
+
 .btn-info:visited:not(.btn) {
+    color: #fff;
+}
+
+.btn-danger {
+    color: #fff;
+}
+
+.btn-danger:visited:not(.btn) {
     color: #fff;
 }
