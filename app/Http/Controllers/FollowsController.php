@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 use Auth;
 
 class FollowsController extends Controller
@@ -30,9 +31,14 @@ class FollowsController extends Controller
         }
     }
 
+    //フォローリスト表示機能
     public function followList()
     {
-        return view('follows.followList');
+        $follows = Auth::User()->follows()->get();//ログインユーザーがフォローしている人を表示する
+        // dd($follows);
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowing_idを取得(pluck)。
+        $posts = Post::with('user')->whereIn('user_id', $following_id)->latest()->get();//Postモデル（postsテーブル）からuserテーブルのuser_idと$following_idが同じ投稿を昇順で取得。('基準カラム名','条件')
+        return view('follows.followList', ['follows' => $follows,'posts' => $posts]);
     }
     public function followerList()
     {

@@ -8,10 +8,12 @@ use Auth;
 
 class PostsController extends Controller
 {
-    //読み込み機能
+    //ログイン後表示機能
     public function index()
     {
-        $posts = Post::get(); //Postモデル（postsテーブル）からレコード情報を取得
+        $id = Auth::id(); //Auth認証している=ログイン中のユーザー
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowing_idを取得(pluck)。
+        $posts = Post::with('user')->whereIn('user_id',$following_id)->orWhere('user_id',$id)->latest()->get(); //Postモデル（postsテーブル）からuserテーブルのuser_idと$following_idか$idが同じ投稿を昇順で取得。('基準カラム名','条件')条件追加=orWhere
         return view('posts.index', ['posts' => $posts]);
     }
 

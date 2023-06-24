@@ -1,6 +1,19 @@
 @extends('layouts.login')
 
 @section('content')
-<h2>フォローリスト機能を実装していきましょう。</h2>
 
+<!-- フォローしている人のアイコン一覧 -->
+<div class="">
+  <!-- タイトル -->
+  <h2>Follow List</h2>
+  @foreach ($follows as $follow)
+  <ul>
+    <li>
+      <!-- アイコンひとまとめ -->
+      <div class="follow_icon"><img src="{{ asset('storage/images'.$follow->user->images) }}" alt="フォローアイコン"></div>
+    </li>
+  </ul>
+  @endforeach
+
+</div>
 @endsection

@@ -56,17 +56,18 @@
         <div id="container">
             @yield('content')
         </div>
+        <!-- サイドバー -->
         <div id="sideBar">
             <div id="confirm">
                 <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                     <p>フォロー数</p>
-                    <p>〇〇名</p>
+                    <p>{{ Auth::user()->follows()->get()->count() }}名</p>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm"><a href="/follow-list" class="btn-text">フォローリスト</a></button>
                 <div>
                     <p>フォロワー数</p>
-                    <p>〇〇名</p>
+                    <p>{{ Auth::user()->followers()->get()->count() }}名</p>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm"><a href="/follower-list" class="btn-text">フォロワーリスト</a></button>
             </div>

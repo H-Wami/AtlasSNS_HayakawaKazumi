@@ -21,30 +21,37 @@
 // use App\Http\Controllers\PostsController;
 
 //ログアウト中のページ
-// Loginページ表示
+//Loginページ表示
 Route::get('/login', 'Auth\LoginController@login')->name('login');
 // ログイン処理
 Route::post('/login', 'Auth\LoginController@login');
 
 // 新規登録用viewページ表示
 Route::get('/register', 'Auth\RegisterController@registerView');
-// ユーザー新規登録処理
+//ユーザー新規登録処理
 Route::post('/register', 'Auth\RegisterController@register');
 
-// 登録完了用viewページ表示
+//登録完了用viewページ表示
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
-//ログイン中のページ
+//ログイン後に表示するページにアクセス制限をかける(ミドルウェア)
+Route::group(['middleware' => ['auth']],function () {
+
+//ログイン後のページ表示
 Route::get('/top', 'PostsController@index');
 
+//プロフィールページ表示
 Route::get('/profile', 'UsersController@profile');
 
-// 検索ページ表示
+//検索ページ表示
 Route::get('/search', 'UsersController@search');
 
+//フォローリスト・フォロワーリスト表示
 Route::get('/follow-list', 'FollowsController@followList');
 Route::get('/follower-list', 'FollowsController@followerList');
+
+});
 
 //ログアウト機能
 Route::get('/logout', 'Auth\LoginController@logout');
