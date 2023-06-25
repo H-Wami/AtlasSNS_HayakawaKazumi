@@ -10,7 +10,7 @@
   <ul>
     <li>
       <!-- アイコンひとまとめ -->
-      <div class="follow_icon"><img src="{{ asset('storage/images'.$follow->user->images) }}" alt="フォローアイコン"></div>
+      <div class="follow_icon"><img src="{{ asset('storage/'.$follow->images) }}" alt="フォローアイコン"></div>
     </li>
   </ul>
   @endforeach

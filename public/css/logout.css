@@ -2,6 +2,7 @@
 
 html {
     height: 100vh;
+    font-size: 16px;
 }
 
 body {
@@ -9,12 +10,19 @@ body {
     background: #106AC4;
     background-image: linear-gradient(0deg, #DFC63C 0%, #106AC4 100%);
     position: relative;
+    font-size: 1rem;
+    color: #fff;
 }
 
 header {
     text-align: center;
 }
 
-.container {
+#container {
+    position: relative;
+    background-color: #222;
+    width: 50%;
+    display: block;
+    text-align: center;
     margin: 0 auto;
 }
