@@ -295,7 +295,7 @@ button.accordion_btn {
     color: #fff;
 }
 
-a.btn-text:visited:not(.btn) {
+a.btn-text {
     color: #fff;
 }
 
@@ -373,16 +373,4 @@ p.keyword {
 .register_icon img {
     width: 50px;
     height: 50px;
-}
-
-.btn-info:visited:not(.btn) {
-    color: #fff;
-}
-
-.btn-danger {
-    color: #fff;
-}
-
-.btn-danger:visited:not(.btn) {
-    color: #fff;
 }

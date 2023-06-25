@@ -16,23 +16,25 @@
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/register']) !!}
 
-<h2>新規ユーザー登録</h2>
+<h2 class="caption">新規ユーザー登録</h2>
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+{{ Form::label('user name') }}
+{{ Form::text('username',null,['class' => 'input_form']) }}
 
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+{{ Form::label('mail address') }}
+{{ Form::text('mail',null,['class' => 'input_form']) }}
 
-{{ Form::label('パスワード') }}
-{{ Form::password('password',null,['class' => 'input']) }}
+{{ Form::label('password') }}
+{{ Form::password('password',['class' => 'input_form']) }}
 
-{{ Form::label('パスワード確認') }}
-{{ Form::password('password_confirmation',null,['class' => 'input']) }}
+{{ Form::label('password confirm') }}
+{{ Form::password('password_confirmation',['class' => 'input_form']) }}
 
-{{ Form::submit('登録') }}
+<div class="btn_content">
+  {{ Form::submit('REGISTER',['class' => 'btn btn-danger']) }}
+</div>
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p class="page_transition"><a href="/login">ログイン画面へ戻る</a></p>
 
 {!! Form::close() !!}
 

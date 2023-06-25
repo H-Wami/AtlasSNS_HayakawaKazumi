@@ -5,16 +5,18 @@
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/login']) !!}
 
-<p>AtlasSNSへようこそ</p>
+<p class="caption">AtlasSNSへようこそ</p>
 
-{{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+{{ Form::label('mail address') }}
+{{ Form::text('mail',null,['class' => 'input_form']) }}
 {{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
+{{ Form::password('password',['class' => 'input_form']) }}
 
-{{ Form::submit('ログイン') }}
+<div class="btn_content">
+{{ Form::submit('LOGIN',['class' => 'btn btn-danger']) }}
+</div>
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+<p class="page_transition"><a href="/register">新規ユーザーの方はこちら</a></p>
 
 {!! Form::close() !!}
 
