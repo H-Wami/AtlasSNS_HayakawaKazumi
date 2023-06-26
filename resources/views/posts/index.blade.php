@@ -39,8 +39,8 @@
         <ul>
           <!-- 左端のまとまり -->
           <li class="left_post_content">
-            <!-- アイコン画像仮置き -->
-            <div class="post_icon"><img src="images/icon1.png" alt="投稿者アイコン"></div>
+            <!-- アイコン画像 -->
+            <div class="post_icon"><img src="{{ asset('storage/'.$post->user->images) }}" alt="投稿者アイコン"></div>
           </li>
           <!-- 中心のまとまり -->
           <li class="center_post_content">

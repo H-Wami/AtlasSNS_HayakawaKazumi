@@ -58,26 +58,35 @@
         </div>
         <!-- サイドバー -->
         <div id="sideBar">
-            <div id="confirm">
+            <div class="confirm">
+                <!-- ログインユーザー名・フォロー数 -->
                 <p>{{ Auth::user()->username }}さんの</p>
-                <div>
+                <div class="side_text">
                     <p>フォロー数</p>
-                    <p>{{ Auth::user()->follows()->get()->count() }}名</p>
+                    <p>{{ Auth::user()->follows()->get()->count() }}名 </p>
                 </div>
-                <button type="button" class="btn btn-primary btn-sm"><a href="/follow-list" class="btn-text">フォローリスト</a></button>
-                <div>
+                <!-- フォローリストボタン -->
+                <div class="side_btn">
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/follow-list" class="btn-text">フォローリスト</a></button>
+                </div>
+                <!-- フォロワー数 -->
+                <div class="side_text">
                     <p>フォロワー数</p>
                     <p>{{ Auth::user()->followers()->get()->count() }}名</p>
                 </div>
-                <button type="button" class="btn btn-primary btn-sm"><a href="/follower-list" class="btn-text">フォロワーリスト</a></button>
+                <!-- フォロワーリストボタン -->
+                <div class="side_btn">
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/follower-list" class="btn-text">フォロワーリスト</a></button>
+                </div>
             </div>
-            <button type="button" class="btn btn-primary"><a href="/search" class="btn-text">ユーザー検索</a></button>
-        </div>
-    </div>
-    <footer>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./js/script.js"></script>
+            <!-- ユーザー検索ボタン -->
+            <div class="side_search_btn">
+                <button type="button" class="btn btn-primary"><a href="/search" class="btn-text">ユーザー検索</a></button>
+            </div>
+            <footer>
+            </footer>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="./js/script.js"></script>
 </body>
 
 </html>

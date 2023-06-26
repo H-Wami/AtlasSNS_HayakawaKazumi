@@ -26,7 +26,7 @@
         <ul>
           <li class="left_register_contents">
             <!-- 登録者アイコン -->
-            <div class="register_icon"> <img src="images/{{ $user->images }}" alt="登録者アイコン"></div>
+            <div class="register_icon"> <img src="{{ asset('storage/'.$user->images) }}" alt="登録者アイコン"></div>
             <!-- 登録者名 -->
             <div class="register_user">{{ $user->username }}</div>
           </li>
