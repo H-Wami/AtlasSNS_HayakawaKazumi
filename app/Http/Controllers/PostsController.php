@@ -12,7 +12,7 @@ class PostsController extends Controller
     public function index()
     {
         $id = Auth::id(); //Auth認証している=ログイン中のユーザー
-        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowing_idを取得(pluck)。
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowed_idを取得(pluck)。
         $posts = Post::with('user')->whereIn('user_id',$following_id)->orWhere('user_id',$id)->latest()->get(); //Postモデル（postsテーブル）からuserテーブルのuser_idと$following_idか$idが同じ投稿を昇順で取得。('基準カラム名','条件')条件追加=orWhere
         return view('posts.index', ['posts' => $posts]);
     }

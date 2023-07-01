@@ -37,7 +37,7 @@ class FollowsController extends Controller
         //アイコン一覧表示
         $follows = Auth::User()->follows()->get();//ログインユーザーがフォローしている人を表示する
         //投稿一覧表示
-        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowing_idを取得(pluck)。
+        $following_id = Auth::user()->follows()->pluck('followed_id'); // ログインユーザーが誰をフォローしているのかfollowed_idを取得(pluck)。
         $posts = Post::with('user')->whereIn('user_id', $following_id)->latest()->get();//Postモデル（postsテーブル）からuserテーブルのuser_idと$following_idが同じ投稿を昇順で取得。('基準カラム名','条件')
         return view('follows.followList', ['follows' => $follows,'posts' => $posts]);
     }
@@ -46,8 +46,10 @@ class FollowsController extends Controller
     public function followerList()
     {
         //アイコン一覧表示
-        $followers = Auth::User()->followers()->get();//ログインユーザーがフォローされている人を表示する
-
-        return view('follows.followerList',['followers' => $followers]);
+        $followers = Auth::User()->followers()->get(); //ログインユーザーがフォローされている人を表示する
+        //投稿一覧表示
+        $followed_id = Auth::user()->followers()->pluck('following_id'); // ログインユーザーが誰からフォローされているのかfollowing_idを取得(pluck)。
+        $posts = Post::with('user')->whereIn('user_id', $followed_id)->latest()->get();//Postモデル（postsテーブル）からuserテーブルのuser_idと$followed_idが同じ投稿を昇順で取得。('基準カラム名','条件')
+        return view('follows.followerList',['followers' => $followers, 'posts' => $posts]);
     }
 }
