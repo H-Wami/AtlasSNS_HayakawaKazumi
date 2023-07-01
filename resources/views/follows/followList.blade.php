@@ -12,7 +12,7 @@
     <ul>
       <li>
         <!-- フォローアイコン -->
-        <div class="follow_icon"><img src="{{ asset('storage/'.$follow->images) }}" alt="フォローアイコン"></div>
+        <div class="follow_icon"><a href="/user/{{$follow->id}}/profile"><img src="{{ asset('storage/'.$follow->images) }}" alt="フォローアイコン"></a></div>
       </li>
     </ul>
     @endforeach
@@ -30,7 +30,7 @@
           <!-- 左端のまとまり -->
           <li class="left_post_content">
             <!-- アイコン画像 -->
-            <div class="post_icon"><img src="{{ asset('storage/'.$post->user->images) }}" alt="投稿者アイコン"></div>
+            <div class="post_icon"><a href="/user/{{$post->user->id}}/profile"><img src="{{ asset('storage/'.$post->user->images) }}" alt="投稿者アイコン"></a></div>
           </li>
           <!-- 中心のまとまり -->
           <li class="center_post_content">

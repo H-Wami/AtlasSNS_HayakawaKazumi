@@ -27,7 +27,7 @@
     <header>
         <div id="head">
             <!-- Atlasリンク -->
-            <h1 class="head_title"><a href="/top"><img src="images/atlas.png"></a></h1>
+            <h1 class="head_title"><a href="/top"><img src="{{ asset('storage/atlas.png') }}"></a></h1>
             <div id="headContainer">
                 <div id="headContent">
                     <!-- ログインユーザー名 -->

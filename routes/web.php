@@ -42,7 +42,7 @@ Route::group(['middleware' => ['auth']],function () {
 Route::get('/top', 'PostsController@index');
 
 //プロフィールページ表示
-Route::get('/profile', 'UsersController@profile');
+Route::get('/user/{id}/profile', 'UsersController@profile');
 
 //検索ページ表示
 Route::get('/search', 'UsersController@search');
