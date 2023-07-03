@@ -15,9 +15,9 @@
 
 <!-- 投稿フォーム -->
 <div class="post_form">
-  <!-- アイコン画像仮置き -->
+  <!-- アイコン画像 -->
   <div class="post_user_icon">
-    <img src="images/icon1.png">
+    <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="投稿者アイコン">
   </div>
   <!-- 入力フォーム -->
   {!! Form::open(['url' => 'post/create']) !!}

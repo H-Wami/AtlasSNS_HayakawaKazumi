@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 use Auth;
 
 class UsersController extends Controller
@@ -32,8 +33,11 @@ class UsersController extends Controller
         return view('users.search', ['users' => $users, 'keyword' => $keyword]);
     }
 
-    public function profile()
+    // プロフィール表示
+    public function profile($id)
     {
-        return view('users.profile');
+        $users = User::where('id',$id)->get(); //$idのusersテーブル情報を取得。
+        $posts = Post::where('user_id', $id)->latest()->get();//$idのpostsテーブル情報を取得。
+        return view('users.profile', ['users' => $users, 'posts' => $posts]);
     }
 }

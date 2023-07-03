@@ -27,7 +27,7 @@
     <header>
         <div id="head">
             <!-- Atlasリンク -->
-            <h1 class="head_title"><a href="/top"><img src="{{ asset('storage/atlas.png') }}"></a></h1>
+            <h1 class="head_title"><a href="/top"><img src="{{ asset('storage/atlas.png') }}" alt="ヘッダーロゴ画像"></a></h1>
             <div id="headContainer">
                 <div id="headContent">
                     <!-- ログインユーザー名 -->
@@ -40,13 +40,13 @@
                     <div class="accordion_content">
                         <ul class="accordion_items">
                             <li class="accordion_text"><a href="/top">HOME</a></li>
-                            <li class="accordion_text"><a href="/profile">プロフィール編集</a></li>
+                            <li class="accordion_text"><a href="/user/{{Auth::user()->id}}/profile">プロフィール編集</a></li>
                             <li class="accordion_text"><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
-                    <!-- アイコン画像仮置き -->
+                    <!-- アイコン画像 -->
                     <div class="head_user_icon">
-                        <img src="images/icon1.png" alt="ヘッダーアイコン">
+                        <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="ヘッダーアイコン">
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             <footer>
             </footer>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="./js/script.js"></script>
+            <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
