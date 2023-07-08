@@ -2,9 +2,74 @@
 
 @section('content')
 
+<!-- バリデーションメッセージ -->
+@if ($errors->any())
+<div class="profile_update_error">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
+
+@foreach ($users as $user)
+<!-- もしユーザーIDがログインユーザーIDと一致していたら -->
+@if($user->id === Auth::user()->id)
+<!-- ログインユーザープロフィール -->
+<div class="login_user_profile">
+  <!-- アイコン画像 -->
+  <div class="login_profile_icon">
+    <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="プロフィールアイコン">
+  </div>
+  <!-- フォームひとまとめ -->
+  <div class="profile_form_contents">
+    <form action="/user/update" method="post" enctype="multipart/form-data" class="">
+      @csrf
+      <!-- ユーザー名 -->
+      <div class="">
+        <label for="user name">user name</label>
+        <input type="text" name="username" value="{{ $user->username }}" class="">
+      </div>
+      <!-- メールアドレス -->
+      <div class="">
+        <label for="mail address">mail address</label>
+        <input type="text" name="mail" value="{{ $user->mail }}" class="">
+      </div>
+      <!-- パスワード -->
+      <div class="">
+        <label for="password">password</label>
+        <input type="password" name="password" class="">
+      </div>
+      <!-- パスワード確認用 -->
+      <div class="">
+        <label for="password confirm">password confirm</label>
+        <input type="password" name="password_confirmation" class="">
+      </div>
+      <!-- 自己紹介文 -->
+      <div class="">
+        <label for="bio">bio</label>
+        <input type="text" name="bio" value="{{ $user->bio }}" class="">
+      </div>
+      <!-- アイコン用画像アップロード -->
+      <div class="">
+        <label for="icon image">icon image</label>
+        <input type="file" name="images" accept="image/jpeg,image/png,image/bmp,image/gif,image/svg+xml" class="">
+      </div>
+      <!-- 更新実行ボタン -->
+      <div class="profile_update_btn">
+        <input type="submit" value="更新" class="btn btn-danger">
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- 一致していなかったら(ログインユーザー以外) -->
+@else
 <!-- ログインユーザー以外のプロフィール -->
 <div class="user_profile">
-  @foreach ($users as $user)
   <!-- アイコン画像 -->
   <div class="profile_icon"><img src="{{ asset('storage/'.$user->images) }}" alt="プロフィールアイコン"></div>
   <div class="profile_text">
@@ -35,7 +100,6 @@
     </div>
     @endif
   </div>
-  @endforeach
 </div>
 
 <!-- 特定ユーザーの投稿一覧 -->
@@ -49,7 +113,7 @@
           <!-- 左端のまとまり -->
           <li class="left_post_content">
             <!-- アイコン画像 -->
-            <div class="post_icon"><a href="/user/{{$post->user->id}}/profile"><img src="{{ asset('storage/'.$post->user->images) }}" alt="投稿者アイコン"></a></div>
+            <div class="post_icon"><img src="{{ asset('storage/'.$post->user->images) }}" alt="投稿者アイコン"></a></div>
           </li>
           <!-- 中心のまとまり -->
           <li class="center_post_content">
@@ -69,4 +133,6 @@
     </li>
   </ul>
 </div>
+@endif
+@endforeach
 @endsection

@@ -73,3 +73,6 @@ Route::get('/user/{id}/unfollow', 'FollowsController@unfollow');
 
 // フォロー機能
 Route::post('/user/{id}/follow', 'FollowsController@follow');
+
+// プロフィール編集(更新)機能
+Route::post('/user/update', 'UsersController@updateUser');

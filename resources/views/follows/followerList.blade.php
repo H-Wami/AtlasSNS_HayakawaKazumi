@@ -12,7 +12,7 @@
     <ul>
       <li>
         <!-- フォロワーアイコン -->
-        <div class="follower_icon"><a href="/user/{{$follower->id}}/profile"><img src="{{ asset('storage/'.$follower->images) }}" alt="フォローアイコン"></a></div>
+        <div class="follower_icon"><a href="/user/{{$follower->id}}/profile"><img src="{{ asset('storage/'.$follower->images) }}" alt="フォロワーアイコン"></a></div>
       </li>
     </ul>
     @endforeach
