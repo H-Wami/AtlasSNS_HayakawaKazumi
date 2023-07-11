@@ -493,3 +493,77 @@ p.keyword {
     align-self: flex-end;
     padding-bottom: 10px;
 }
+
+/* プロフィール編集画面 */
+.login_user_profile {
+    width: 65%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 50px 0;
+    justify-content: space-between;
+}
+
+.login_profile_icon img{
+    width: 50px;
+    height: 50px;
+}
+
+.profile_form_contents{
+    width: 90%;
+}
+
+label {
+    font-size: 18px;
+}
+
+.text_form_contents{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 40px 10px;
+}
+
+.text_form{
+    width: 60%;
+    height: 35px;
+    border: solid 1px #7c7c7c;
+    background-color: #efefef;
+}
+
+.images_form_contents{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 0 40px 10px;
+}
+
+.images_form_container{
+    width: 60%;
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #7c7c7c;
+    background-color: #efefef;
+}
+
+.images_form{
+    width: 60%;
+    height: 35%;
+    color: #a0a0a0;
+    background-color: #fff;
+    font-size: 20px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.images_form_inside{
+    display: none;
+}
+
+.profile_update_btn{
+    text-align: center;
+}

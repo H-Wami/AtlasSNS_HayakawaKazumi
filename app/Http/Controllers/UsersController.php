@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use Auth;
+// Storageクラス使用
+use Illuminate\Support\Facades\Storage;
 // RegisterFormRequest使用
 use App\Http\Requests\ProfileFormRequest;
 
@@ -63,7 +65,7 @@ class UsersController extends Controller
             $filename = $request->images->getClientOriginalName(); //元々のファイル名をつける
             $file = $request->images->storeAs('',$filename,'public'); //publicに保存
             $path = Storage::url($file); //画像のパス(URL)を取得
-            $update['images'] = $path; //値を保存する。 $変数['']= 要素の追加
+            $update['images'] = $filename; //値を保存する。 $変数['']= 要素の追加
         }
 
         $user->update($update); //更新機能実行

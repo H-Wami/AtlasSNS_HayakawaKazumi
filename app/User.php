@@ -9,13 +9,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    //更新可能なカラム
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password', 'following_id', 'follows.id'
+        'username', 'mail', 'password', 'following_id', 'follows.id',
+        'bio','images'
     ];
 
     /**

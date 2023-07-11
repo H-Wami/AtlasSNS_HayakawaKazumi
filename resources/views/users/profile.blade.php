@@ -27,38 +27,42 @@
     <form action="/user/update" method="post" enctype="multipart/form-data" class="">
       @csrf
       <!-- ユーザー名 -->
-      <div class="">
+      <div class="text_form_contents">
         <label for="user name">user name</label>
-        <input type="text" name="username" value="{{ $user->username }}" class="">
+        <input type="text" name="username" value="{{ $user->username }}" class="text_form">
       </div>
       <!-- メールアドレス -->
-      <div class="">
+      <div class="text_form_contents">
         <label for="mail address">mail address</label>
-        <input type="text" name="mail" value="{{ $user->mail }}" class="">
+        <input type="text" name="mail" value="{{ $user->mail }}" class="text_form">
       </div>
       <!-- パスワード -->
-      <div class="">
+      <div class="text_form_contents">
         <label for="password">password</label>
-        <input type="password" name="password" class="">
+        <input type="password" name="password" class="text_form">
       </div>
       <!-- パスワード確認用 -->
-      <div class="">
+      <div class="text_form_contents">
         <label for="password confirm">password confirm</label>
-        <input type="password" name="password_confirmation" class="">
+        <input type="password" name="password_confirmation" class="text_form">
       </div>
       <!-- 自己紹介文 -->
-      <div class="">
+      <div class="text_form_contents">
         <label for="bio">bio</label>
-        <input type="text" name="bio" value="{{ $user->bio }}" class="">
+        <input type="text" name="bio" value="{{ $user->bio }}" class="text_form">
       </div>
       <!-- アイコン用画像アップロード -->
-      <div class="">
+      <div class="images_form_contents">
         <label for="icon image">icon image</label>
-        <input type="file" name="images" accept="image/jpeg,image/png,image/bmp,image/gif,image/svg+xml" class="">
+        <div class="images_form_container">
+          <label class="images_form">
+            <input type="file" name="images" accept="image/jpeg,image/png,image/bmp,image/gif,image/svg+xml" class="images_form_inside">
+          ファイルを選択</label>
+        </div>
       </div>
       <!-- 更新実行ボタン -->
       <div class="profile_update_btn">
-        <input type="submit" value="更新" class="btn btn-danger">
+        <input type="submit" value="更新" class="btn btn-danger w-25">
       </div>
     </form>
   </div>
